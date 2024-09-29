@@ -20,7 +20,9 @@ extern "C" {
 #endif
 }
 
-#define RETRANSMIT  5
+#ifndef TX433_RETRANSMIT
+#define TX433_RETRANSMIT  5
+#endif
 
 const int Tx433::pulse_high = 250;
 const int Tx433::pulse_one_low = 250;
@@ -98,7 +100,7 @@ void Tx433::sendCode(String str, int len) {
 }
 
 void Tx433::sendPackets(String grp, String dev, String onoff) {
-  for (int i = 0; i < RETRANSMIT; i++) {
+  for (int i = 0; i < TX433_RETRANSMIT; i++) {
 	  sendSync();
 	  sendCode(TxCode, TxCode.length());
 	  sendCode(grp, grp.length());
