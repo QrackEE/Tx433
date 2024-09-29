@@ -24,10 +24,10 @@ extern "C" {
 #define TX433_RETRANSMIT  5
 #endif
 
-const int Tx433::pulse_high = 250;
-const int Tx433::pulse_one_low = 250;
-const int Tx433::pulse_zero_low = 1250;
-const int Tx433::pulse_sync_low = 2500;
+const int Tx433::pulse_high = 270;      // short_width
+const int Tx433::pulse_one_low = 270;   // short_width
+const int Tx433::pulse_zero_low = 1300; // long_width
+const int Tx433::pulse_sync_low = 2650; // sync_width
 const int Tx433::pulse_pause_low = 10000;
 
 String Tx433::GrpOn="01";
