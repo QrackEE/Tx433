@@ -5,14 +5,13 @@
   A library to handle the TX433 Proove/Anslut device.
   Version 1.0
 
-  http://tech.jolowe.se/home-automation-rf-protocols/  
+  http://tech.jolowe.se/home-automation-rf-protocols/
 */
 #include "tx433.h"
 
 extern "C" {
   // AVR LibC Includes
   #include <inttypes.h>
-  #include <avr/interrupt.h>
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
 #else
@@ -57,7 +56,7 @@ void Tx433::Device_On(int dev)
 		sendPackets(GrpOn, Unit[3], On);
 	} else
 		sendPackets(GrpOff, Unit[dev], On);
-}	  
+}
 
 void Tx433::Device_Off(int dev)
 {
@@ -65,7 +64,7 @@ void Tx433::Device_Off(int dev)
 		sendPackets(GrpOn, Unit[3], Off);
 	} else
 		sendPackets(GrpOff, Unit[dev], Off);
-}	  
+}
 
 int Tx433::Get_txpin(void)
 {
@@ -75,12 +74,12 @@ int Tx433::Get_txpin(void)
 String Tx433::Get_TxCode(void)
 {
 		return TxCode;
-}	  
+}
 
 String Tx433::Get_ChCode(void)
 {
 		return ChCode;
-}	  
+}
 
 /* Private */
 
